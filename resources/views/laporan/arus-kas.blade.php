@@ -198,7 +198,7 @@
                 <div>
                     <p class="text-white font-bold text-lg">Arus Kas Bersih</p>
                     <p class="text-white/70 text-xs mt-0.5">
-                        {{ $positif ? '✓ Positif — lebih banyak masuk dari keluar' : '⚠ Negatif — pengeluaran melebihi pemasukan' }}
+                        {{ $positif ? 'Positif — lebih banyak masuk dari keluar' : 'Negatif — pengeluaran melebihi pemasukan' }}
                     </p>
                 </div>
                 <span class="text-white font-black text-2xl">

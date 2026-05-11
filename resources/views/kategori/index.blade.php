@@ -60,9 +60,9 @@
                     </td>
                     <td>
                         @if($cat->type === 'pemasukan')
-                        <span class="badge-pemasukan">↑ Pemasukan</span>
+                        <span class="badge-pemasukan"><i data-lucide="arrow-up" class="w-3 h-3 inline-block mr-1"></i> Pemasukan</span>
                         @else
-                        <span class="badge-pengeluaran">↓ Pengeluaran</span>
+                        <span class="badge-pengeluaran"><i data-lucide="arrow-down" class="w-3 h-3 inline-block mr-1"></i> Pengeluaran</span>
                         @endif
                     </td>
                     <td class="text-center">
@@ -89,7 +89,11 @@
                                         ? 'background:#ECFDF5;color:#1D9E75;border-color:#D1FAE5;'
                                         : 'background:#F3F4F6;color:#9CA3AF;border-color:#E5E7EB;' }}"
                                     title="{{ $cat->is_active ? 'Klik untuk nonaktifkan' : 'Klik untuk aktifkan' }}">
-                                {{ $cat->is_active ? '● Aktif' : '○ Nonaktif' }}
+                                @if($cat->is_active)
+                                    <i data-lucide="circle" class="w-2 h-2 inline-block mr-1 fill-current"></i> Aktif
+                                @else
+                                    <i data-lucide="circle" class="w-2 h-2 inline-block mr-1"></i> Nonaktif
+                                @endif
                             </button>
                         </form>
                     </td>

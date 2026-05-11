@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
 
         $this->command->info('');
-        $this->command->info('🎉 Sistem Manajemen Keuangan siap digunakan!');
+        $this->command->info('🎉 Union Authentic siap digunakan!');
         $this->command->info('   Akses: http://127.0.0.1:8000/login');
     }
 }

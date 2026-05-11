@@ -84,7 +84,7 @@ class CategorySeeder extends Seeder
             );
         }
 
-        $this->command->info('✅ Kategori keuangan berhasil dibuat.');
+        $this->command->info('Kategori keuangan berhasil dibuat.');
         $this->command->table(
             ['Nama', 'Tipe', 'Is HPP'],
             collect($categories)->map(fn ($c) => [

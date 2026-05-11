@@ -67,7 +67,7 @@ class RoleSeeder extends Seeder
             'dashboard.view',
         ]);
 
-        $this->command->info('✅ Role Admin dan Petugas berhasil dibuat.');
+        $this->command->info('Role Admin dan Petugas berhasil dibuat.');
         $this->command->table(
             ['Role', 'Permissions'],
             [

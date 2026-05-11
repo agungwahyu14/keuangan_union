@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         // ── Admin ─────────────────────────────────────────────────────────
         $admin = User::firstOrCreate(
-            ['email' => 'admin@keuangan.com'],
+            ['email' => 'admin@unionauthentic.com'],
             [
                 'name'      => 'Administrator',
                 'password'  => Hash::make('Admin@123'),
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
 
         // ── Petugas contoh ────────────────────────────────────────────────
         $petugas = User::firstOrCreate(
-            ['email' => 'petugas@keuangan.com'],
+            ['email' => 'petugas@unionauthentic.com'],
             [
                 'name'      => 'Budi Santoso',
                 'password'  => Hash::make('Petugas@123'),
@@ -41,12 +41,12 @@ class UserSeeder extends Seeder
         $petugas->syncRoles('petugas');
 
         $this->command->info('');
-        $this->command->info('✅ User default berhasil dibuat.');
+        $this->command->info('User default berhasil dibuat.');
         $this->command->table(
             ['Nama', 'Email', 'Password', 'Role'],
             [
-                ['Administrator', 'admin@keuangan.com',   'Admin@123',   'admin'],
-                ['Budi Santoso',  'petugas@keuangan.com', 'Petugas@123', 'petugas'],
+                ['Administrator', 'admin@unionauthentic.com',   'Admin@123',   'admin'],
+                ['Budi Santoso',  'petugas@unionauthentic.com', 'Petugas@123', 'petugas'],
             ]
         );
     }

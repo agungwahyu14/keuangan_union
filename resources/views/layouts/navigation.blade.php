@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ auth()->user()?->hasRole('admin') ? route('dashboard') : route('transaksi.index') }}"
                        class="text-sm font-bold text-gray-800 tracking-tight">
-                        💰 {{ config('app.name') }}
+                        <i data-lucide="wallet" class="w-4 h-4 inline-block mr-1"></i> {{ config('app.name') }}
                     </a>
                 </div>
 
@@ -56,11 +56,11 @@
                     {{-- Badge Role --}}
                     @if(Auth::user()->hasRole('admin'))
                         <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 border border-indigo-200">
-                            👑 Admin
+                            <i data-lucide="shield-check" class="w-3 h-3 mr-1"></i> Admin
                         </span>
                     @else
                         <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
-                            📋 Petugas
+                            <i data-lucide="clipboard-list" class="w-3 h-3 mr-1"></i> Petugas
                         </span>
                     @endif
                 @endauth
@@ -85,7 +85,7 @@
                         </div>
 
                         <x-dropdown-link :href="route('profile.edit')">
-                            ⚙️ Profil Saya
+                            <i data-lucide="settings" class="w-4 h-4 inline-block mr-2"></i> Profil Saya
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -93,7 +93,7 @@
                             @csrf
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault(); this.closest('form').submit();">
-                                🚪 Keluar
+                                <i data-lucide="log-out" class="w-4 h-4 inline-block mr-2 text-red-500"></i> Keluar
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -151,16 +151,16 @@
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 <div class="mt-1">
                     @if(Auth::user()->hasRole('admin'))
-                        <span class="text-xs font-semibold text-indigo-600">👑 Administrator</span>
+                        <span class="text-xs font-semibold text-indigo-600 flex items-center gap-1"><i data-lucide="shield-check" class="w-3 h-3"></i> Administrator</span>
                     @else
-                        <span class="text-xs font-semibold text-emerald-600">📋 Petugas</span>
+                        <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1"><i data-lucide="clipboard-list" class="w-3 h-3"></i> Petugas</span>
                     @endif
                 </div>
             </div>
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    ⚙️ Profil Saya
+                    <i data-lucide="settings" class="w-4 h-4 inline-block mr-2"></i> Profil Saya
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -168,7 +168,7 @@
                     @csrf
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault(); this.closest('form').submit();">
-                        🚪 Keluar
+                        <i data-lucide="log-out" class="w-4 h-4 inline-block mr-2 text-red-500"></i> Keluar
                     </x-responsive-nav-link>
                 </form>
             </div>

@@ -227,7 +227,7 @@
                     = Laba Kotor − Beban Operasional
                 </p>
                 <p class="text-white font-black text-xl mt-1">
-                    {{ $labaPositif ? '✓ LABA BERSIH' : '✗ RUGI BERSIH' }}
+                    <i data-lucide="{{ $labaPositif ? 'check-circle' : 'x-circle' }}" class="w-6 h-6 inline-block mr-1"></i> {{ $labaPositif ? 'LABA BERSIH' : 'RUGI BERSIH' }}
                 </p>
             </div>
             <span class="text-white font-black text-3xl">
@@ -237,9 +237,9 @@
         <div class="{{ $labaPositif ? 'bg-emerald-50 border-emerald-100' : 'bg-red-50 border-red-100' }} border px-6 py-3 rounded-b-2xl">
             <p class="text-sm {{ $labaPositif ? 'text-emerald-700' : 'text-red-700' }}">
                 @if($labaPositif)
-                    ✓ Usaha menghasilkan keuntungan bersih sebesar <strong>Rp {{ number_format($labaBersih, 0, ',', '.') }}</strong> pada periode ini.
+                    <i data-lucide="check-circle" class="w-4 h-4 inline-block mr-1"></i> Usaha menghasilkan keuntungan bersih sebesar <strong>Rp {{ number_format($labaBersih, 0, ',', '.') }}</strong> pada periode ini.
                 @else
-                    ⚠ Usaha mengalami kerugian bersih sebesar <strong>Rp {{ number_format(abs($labaBersih), 0, ',', '.') }}</strong> pada periode ini.
+                    <i data-lucide="alert-triangle" class="w-4 h-4 inline-block mr-1"></i> Usaha mengalami kerugian bersih sebesar <strong>Rp {{ number_format(abs($labaBersih), 0, ',', '.') }}</strong> pada periode ini.
                 @endif
             </p>
         </div>

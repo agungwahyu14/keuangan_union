@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes — Sistem Manajemen Keuangan
+| Web Routes — Union Authentic
 |--------------------------------------------------------------------------
 | Middleware stack:
 |   auth   → harus login

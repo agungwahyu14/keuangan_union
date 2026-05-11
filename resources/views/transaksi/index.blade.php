@@ -123,7 +123,7 @@
                         </td>
                         <td class="px-4 py-3">
                             @if($trx->category?->is_hpp)
-                                <span class="badge-hpp">🏷 {{ $trx->category->name }}</span>
+                                <span class="badge-hpp"><i data-lucide="tag" class="w-3 h-3 inline-block mr-1"></i> {{ $trx->category->name }}</span>
                             @elseif($trx->type === 'pemasukan')
                                 <span class="badge-pemasukan">{{ $trx->category?->name ?? '-' }}</span>
                             @else
@@ -132,7 +132,11 @@
                         </td>
                         <td class="px-4 py-3">
                             <span class="{{ $trx->type === 'pemasukan' ? 'badge-pemasukan' : 'badge-pengeluaran' }}">
-                                {{ $trx->type === 'pemasukan' ? '↑ Pemasukan' : '↓ Pengeluaran' }}
+                                @if($trx->type === 'pemasukan')
+                                    <i data-lucide="arrow-up" class="w-3 h-3 inline-block mr-1"></i> Pemasukan
+                                @else
+                                    <i data-lucide="arrow-down" class="w-3 h-3 inline-block mr-1"></i> Pengeluaran
+                                @endif
                             </span>
                         </td>
                         <td class="px-4 py-3 text-right font-bold whitespace-nowrap

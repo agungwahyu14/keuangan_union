@@ -40,7 +40,7 @@ class CashFlowExport implements FromCollection, WithHeadings, WithStyles, Should
 
         // ── Section Header ───────────────────────────────────────
         $rows->push(['LAPORAN ARUS KAS', '', '', '']);
-        $rows->push(['Sistem Manajemen Keuangan', '', '', '']);
+        $rows->push(['Union Authentic', '', '', '']);
         $rows->push(['Periode: ' . $this->dateFrom->format('d/m/Y') . ' s/d ' . $this->dateTo->format('d/m/Y'), '', '', '']);
         $rows->push(['Dicetak: ' . now()->format('d/m/Y H:i'), '', '', '']);
         $rows->push(['', '', '', '']);
@@ -69,7 +69,7 @@ class CashFlowExport implements FromCollection, WithHeadings, WithStyles, Should
                 $item->category?->name ?? 'Tanpa Kategori',
                 $item->jumlah,
                 $item->total,
-                $isHpp ? '⚠ HPP / Pembelian Stok' : '',
+                $isHpp ? 'HPP / Pembelian Stok' : '',
             ]);
         }
         $rows->push(['SUBTOTAL PENGELUARAN', '', $this->data['totalPengeluaran'], '']);

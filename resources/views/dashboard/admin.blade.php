@@ -61,7 +61,7 @@
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center icon-income">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/></svg>
                 </div>
-                <span class="text-xs text-gray-400">↑ Total Pemasukan</span>
+                <span class="text-xs text-gray-400"><i data-lucide="arrow-up-circle" class="w-3 h-3 inline-block mr-1"></i> Total Pemasukan</span>
             </div>
             <p class="text-2xl font-black" style="color: #1D9E75;">
                 Rp {{ number_format($totalPemasukan, 0, ',', '.') }}
@@ -77,7 +77,7 @@
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center icon-expense">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6"/></svg>
                 </div>
-                <span class="text-xs text-gray-400">↓ Total Pengeluaran</span>
+                <span class="text-xs text-gray-400"><i data-lucide="arrow-down-circle" class="w-3 h-3 inline-block mr-1"></i> Total Pengeluaran</span>
             </div>
             <p class="text-2xl font-black" style="color: #C0392B;">
                 Rp {{ number_format($totalPengeluaran, 0, ',', '.') }}
@@ -95,7 +95,7 @@
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center icon-hpp">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
                 </div>
-                <span class="text-xs text-gray-400">⚙ Total HPP</span>
+                <span class="text-xs text-gray-400"><i data-lucide="settings" class="w-3 h-3 inline-block mr-1"></i> Total HPP</span>
             </div>
             <p class="text-2xl font-black" style="color: #BA7517;">
                 Rp {{ number_format($totalHPP, 0, ',', '.') }}
@@ -111,13 +111,13 @@
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center {{ $labaPositif ? 'icon-profit' : 'icon-loss' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                 </div>
-                <span class="text-xs text-gray-400">✦ Laba Bersih</span>
+                <span class="text-xs text-gray-400"><i data-lucide="sparkles" class="w-3 h-3 inline-block mr-1"></i> Laba Bersih</span>
             </div>
             <p class="text-2xl font-black" style="color: {{ $labaPositif ? '#1D9E75' : '#C0392B' }};">
                 {{ $labaRugiBersih < 0 ? '-' : '' }}Rp {{ number_format(abs($labaRugiBersih), 0, ',', '.') }}
             </p>
             <p class="text-xs mt-1" style="color: {{ $labaPositif ? '#1D9E75' : '#C0392B' }};">
-                {{ $labaPositif ? '▲ Untung' : '▼ Rugi' }}
+                <i data-lucide="{{ $labaPositif ? 'trending-up' : 'trending-down' }}" class="w-3 h-3 inline-block mr-1"></i> {{ $labaPositif ? 'Untung' : 'Rugi' }}
                 {{ \Carbon\Carbon::create($year, $month)->translatedFormat('M Y') }}
             </p>
         </div>
@@ -144,7 +144,7 @@
                     </span>
                     <a href="{{ route('laporan.arus-kas') }}"
                        class="text-xs font-semibold" style="color: #A07800;">
-                        Lihat detail →
+                        Lihat detail <i data-lucide="arrow-right" class="w-3 h-3 inline-block ml-1"></i>
                     </a>
                 </div>
             </div>
@@ -207,7 +207,7 @@
         <div class="flex items-center justify-between px-5 py-4 border-b border-gray-50">
             <h3 class="font-bold text-gray-800 text-sm">Transaksi Terbaru</h3>
             <a href="{{ route('transaksi.index') }}"
-               class="text-xs font-semibold" style="color: #A07800;">Lihat semua →</a>
+               class="text-xs font-semibold" style="color: #A07800;">Lihat semua <i data-lucide="arrow-right" class="w-3 h-3 inline-block ml-1"></i></a>
         </div>
         <table class="w-full data-table text-sm">
             <thead>

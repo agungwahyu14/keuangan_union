@@ -25,7 +25,7 @@
                                 ? 'bg-emerald-600 text-white border-emerald-600 shadow-md'
                                 : 'bg-white text-gray-600 border-gray-200 hover:border-emerald-300'"
                              class="border-2 rounded-xl p-4 text-center transition-all select-none">
-                            <div class="text-2xl mb-1">↑</div>
+                            <div class="text-2xl mb-1"><i data-lucide="arrow-up" class="w-6 h-6 mx-auto"></i></div>
                             <div class="text-sm font-semibold">Pemasukan</div>
                         </div>
                     </label>
@@ -36,7 +36,7 @@
                                 ? 'bg-red-600 text-white border-red-600 shadow-md'
                                 : 'bg-white text-gray-600 border-gray-200 hover:border-red-300'"
                              class="border-2 rounded-xl p-4 text-center transition-all select-none">
-                            <div class="text-2xl mb-1">↓</div>
+                            <div class="text-2xl mb-1"><i data-lucide="arrow-down" class="w-6 h-6 mx-auto"></i></div>
                             <div class="text-sm font-semibold">Pengeluaran</div>
                         </div>
                     </label>

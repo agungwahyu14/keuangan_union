@@ -83,6 +83,15 @@ class Transaction extends Model
     }
 
     /**
+    * Pengeluaran non-HPP (biaya operasional)
+    */
+    public function scopeBiayaOperasional(Builder $query): Builder
+    {
+        return $query->where('type', 'pengeluaran')
+                     ->whereHas('category', fn ($q) => $q->where('is_hpp', false));
+    }
+
+    /**
      * Hanya transaksi pemasukan
      */
     public function scopePemasukan(Builder $query): Builder
@@ -96,15 +105,6 @@ class Transaction extends Model
     public function scopePengeluaran(Builder $query): Builder
     {
         return $query->where('type', 'pengeluaran');
-    }
-
-    /**
-     * Pengeluaran non-HPP (biaya operasional)
-     */
-    public function scopeBiayaOperasional(Builder $query): Builder
-    {
-        return $query->where('type', 'pengeluaran')
-                     ->whereHas('category', fn ($q) => $q->where('is_hpp', false));
     }
 
     // ─── Helper Kalkulasi Laporan ─────────────────────────────────

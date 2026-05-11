@@ -34,7 +34,7 @@ class ProfitLossExport implements FromCollection, WithStyles, ShouldAutoSize, Wi
 
         // ── Header Dokumen ───────────────────────────────────────
         $rows->push(['LAPORAN LABA RUGI SEDERHANA', '', '', '']);
-        $rows->push(['Sistem Manajemen Keuangan', '', '', '']);
+        $rows->push(['Union Authentic', '', '', '']);
         $rows->push(['Periode: ' . $this->dateFrom->format('d/m/Y') . ' s/d ' . $this->dateTo->format('d/m/Y'), '', '', '']);
         $rows->push(['Dicetak: ' . now()->format('d/m/Y H:i'), '', '', '']);
         $rows->push(['', '', '', '']);
@@ -68,7 +68,7 @@ class ProfitLossExport implements FromCollection, WithStyles, ShouldAutoSize, Wi
         $rows->push(['', '', '', '']);
 
         // ── LABA BERSIH ──────────────────────────────────────────
-        $rows->push(['LABA / RUGI BERSIH', '', $this->data['labaBersih'], $this->data['labaBersih'] >= 0 ? '✓ LABA' : '✗ RUGI']);
+        $rows->push(['LABA / RUGI BERSIH', '', $this->data['labaBersih'], $this->data['labaBersih'] >= 0 ? 'LABA' : 'RUGI']);
 
         return $rows;
     }

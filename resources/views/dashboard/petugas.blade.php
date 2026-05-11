@@ -7,7 +7,7 @@
         <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
         <div class="relative">
             <p class="text-indigo-200 text-sm mb-1">Selamat datang,</p>
-            <h2 class="text-2xl font-bold">{{ Auth::user()->name }} 👋</h2>
+            <h2 class="text-2xl font-bold flex items-center gap-2">{{ Auth::user()->name }} <i data-lucide="smile" class="w-6 h-6 text-indigo-200"></i></h2>
             <p class="text-indigo-200 text-sm mt-1">{{ now()->translatedFormat('l, d F Y') }}</p>
             <div class="mt-5">
                 <a href="{{ route('transaksi.create') }}"
@@ -45,7 +45,7 @@
                 <h3 class="font-semibold text-gray-800">Riwayat Transaksi Saya</h3>
                 <p class="text-xs text-gray-400 mt-0.5">7 hari terakhir</p>
             </div>
-            <a href="{{ route('transaksi.index') }}" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">Lihat semua →</a>
+            <a href="{{ route('transaksi.index') }}" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">Lihat semua <i data-lucide="arrow-right" class="w-4 h-4 inline-block ml-1"></i></a>
         </div>
         @if($recentTransactions->isEmpty())
         <div class="py-16 text-center text-gray-400">

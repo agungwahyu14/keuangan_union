@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Auth Routes — Sistem Manajemen Keuangan
+| Auth Routes — Union Authentic
 |--------------------------------------------------------------------------
 | Register publik DINONAKTIFKAN — hanya Admin yang bisa tambah user baru
 | via menu manajemen user di halaman admin.

@@ -72,9 +72,9 @@
                     <td class="text-gray-500 text-xs">{{ $user->phone ?: '—' }}</td>
                     <td class="text-center">
                         @if($user->hasRole('admin'))
-                        <span class="badge-admin">👑 Admin</span>
+                        <span class="badge-admin"><i data-lucide="shield-check" class="w-3 h-3 inline-block mr-1"></i> Admin</span>
                         @else
-                        <span class="badge-petugas">📋 Petugas</span>
+                        <span class="badge-petugas"><i data-lucide="clipboard-list" class="w-3 h-3 inline-block mr-1"></i> Petugas</span>
                         @endif
                     </td>
                     <td class="text-center">
@@ -93,12 +93,16 @@
                                         ? 'background:#ECFDF5;color:#1D9E75;border-color:#D1FAE5;'
                                         : 'background:#F3F4F6;color:#9CA3AF;border-color:#E5E7EB;' }}"
                                     title="{{ $user->is_active ? 'Klik nonaktifkan' : 'Klik aktifkan' }}">
-                                {{ $user->is_active ? '● Aktif' : '○ Nonaktif' }}
+                                @if($user->is_active)
+                                    <i data-lucide="circle" class="w-2 h-2 inline-block mr-1 fill-current"></i> Aktif
+                                @else
+                                    <i data-lucide="circle" class="w-2 h-2 inline-block mr-1"></i> Nonaktif
+                                @endif
                             </button>
                         </form>
                         @else
                         <span class="text-xs font-semibold px-3 py-1 rounded-full"
-                              style="background:#ECFDF5;color:#1D9E75;">● Aktif</span>
+                              style="background:#ECFDF5;color:#1D9E75;"><i data-lucide="circle" class="w-2 h-2 inline-block mr-1 fill-current"></i> Aktif</span>
                         @endif
                     </td>
                     <td>

@@ -28,7 +28,7 @@
                     <div :class="type === 'pemasukan' ? 'border-2 shadow-md' : 'border border-gray-200 hover:border-gray-300'"
                          :style="type === 'pemasukan' ? 'border-color:#1D9E75;background:#ECFDF5;' : ''"
                          class="rounded-xl p-4 text-center transition-all select-none">
-                        <div class="text-xl mb-1">↑</div>
+                        <div class="text-xl mb-1"><i data-lucide="arrow-up" class="w-6 h-6 mx-auto"></i></div>
                         <div class="text-sm font-bold" :style="type === 'pemasukan' ? 'color:#1D9E75;' : 'color:#6B7280;'">Pemasukan</div>
                         <div class="text-xs mt-0.5" :style="type === 'pemasukan' ? 'color:#6EE7B7;' : 'color:#9CA3AF;'">Penjualan, pendapatan</div>
                     </div>
@@ -38,7 +38,7 @@
                     <div :class="type === 'pengeluaran' ? 'border-2 shadow-md' : 'border border-gray-200 hover:border-gray-300'"
                          :style="type === 'pengeluaran' ? 'border-color:#C0392B;background:#FEF2F2;' : ''"
                          class="rounded-xl p-4 text-center transition-all select-none">
-                        <div class="text-xl mb-1">↓</div>
+                        <div class="text-xl mb-1"><i data-lucide="arrow-down" class="w-6 h-6 mx-auto"></i></div>
                         <div class="text-sm font-bold" :style="type === 'pengeluaran' ? 'color:#C0392B;' : 'color:#6B7280;'">Pengeluaran</div>
                         <div class="text-xs mt-0.5" :style="type === 'pengeluaran' ? 'color:#FCA5A5;' : 'color:#9CA3AF;'">Biaya, pembelian</div>
                     </div>

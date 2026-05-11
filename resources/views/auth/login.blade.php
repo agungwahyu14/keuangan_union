@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Masuk — {{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- Favicon --}}
+    <link rel="icon" type="image/x-icon" href="">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="min-h-screen flex" style="background-color: #F5F5F0;">
 
@@ -29,11 +33,11 @@
             <div class="flex items-center gap-3">
                 <div class="w-11 h-11 rounded-2xl flex items-center justify-center font-black text-sm"
                      style="background-color: #FFEA6C; color: #1C1C1E; letter-spacing: -0.5px;">
-                    SK
+                    UA
                 </div>
                 <div>
-                    <p class="text-white font-bold text-base leading-tight">Sistem Keuangan</p>
-                    <p class="text-xs" style="color: #636366;">Manajemen Keuangan Union</p>
+                    <p class="text-white font-bold text-base leading-tight">Union Authentic</p>
+                    <p class="text-xs" style="color: #636366;">Sistem Keuangan</p>
                 </div>
             </div>
         </div>
@@ -52,14 +56,14 @@
 
             <div class="space-y-3">
                 @foreach([
-                    ['icon' => '📊', 'text' => 'Dashboard ringkasan keuangan real-time'],
-                    ['icon' => '📋', 'text' => 'Laporan Arus Kas & Laba Rugi otomatis'],
-                    ['icon' => '👥', 'text' => 'Multi-user dengan kontrol akses peran'],
-                    ['icon' => '📤', 'text' => 'Export laporan ke Excel & PDF'],
+                    ['icon' => 'bar-chart-3', 'text' => 'Dashboard ringkasan keuangan real-time'],
+                    ['icon' => 'clipboard-list', 'text' => 'Laporan Arus Kas & Laba Rugi otomatis'],
+                    ['icon' => 'users', 'text' => 'Multi-user dengan kontrol akses peran'],
+                    ['icon' => 'download', 'text' => 'Export laporan ke Excel & PDF'],
                 ] as $feature)
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg flex items-center justify-center text-sm flex-shrink-0"
-                         style="background-color: #2C2C2E;">{{ $feature['icon'] }}</div>
+                         style="background-color: #2C2C2E;"><i data-lucide="{{ $feature['icon'] }}" class="w-4 h-4 text-gray-400"></i></div>
                     <p class="text-sm" style="color: #AEAEB2;">{{ $feature['text'] }}</p>
                 </div>
                 @endforeach
@@ -69,7 +73,7 @@
         {{-- Bottom: Credit --}}
         <div class="relative">
             <p class="text-xs" style="color: #636366;">
-                © {{ date('Y') }} Sistem Manajemen Keuangan Union
+                © {{ date('Y') }} Union Authentic
             </p>
         </div>
     </div>
@@ -81,17 +85,17 @@
             {{-- Mobile Logo --}}
             <div class="flex items-center gap-3 mb-8 lg:hidden">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm"
-                     style="background-color: #1C1C1E; color: #FFEA6C;">SK</div>
+                     style="background-color: #1C1C1E; color: #FFEA6C;">UA</div>
                 <div>
-                    <p class="font-bold text-gray-800">Sistem Keuangan</p>
-                    <p class="text-xs text-gray-400">Manajemen Keuangan Union</p>
+                    <p class="font-bold text-gray-800">Union Authentic</p>
+                    <p class="text-xs text-gray-400">Sistem Keuangan</p>
                 </div>
             </div>
 
             {{-- Form Card --}}
             <div class="bg-white rounded-3xl shadow-xl shadow-gray-200/60 p-8">
                 <div class="mb-7">
-                    <h2 class="text-2xl font-black text-gray-900">Selamat Datang 👋</h2>
+                    <h2 class="text-2xl font-black text-gray-900">Selamat Datang</h2>
                     <p class="text-sm text-gray-400 mt-1">Masuk ke akun Anda untuk melanjutkan</p>
                 </div>
 
@@ -125,7 +129,7 @@
                             </div>
                             <input id="email" type="email" name="email"
                                    value="{{ old('email') }}"
-                                   placeholder="admin@keuangan.com"
+                                   placeholder="admin@unionauthentic.com"
                                    required autofocus autocomplete="email"
                                    class="w-full pl-11 pr-4 py-3 text-sm border border-gray-200 rounded-xl bg-gray-50 text-gray-800 placeholder-gray-400 focus:outline-none focus:bg-white transition-all"
                                    style="focus:border-color: #A07800; focus:box-shadow: 0 0 0 2px rgba(160,120,0,0.15);"
@@ -194,16 +198,16 @@
                     <p class="text-xs text-center text-gray-400 mb-3 font-medium uppercase tracking-wider">Akun Demo</p>
                     <div class="grid grid-cols-2 gap-2">
                         <button type="button"
-                                onclick="document.getElementById('email').value='admin@keuangan.com';document.getElementById('password').value='Admin@123'"
+                                onclick="document.getElementById('email').value='admin@unionauthentic.com';document.getElementById('password').value='Admin@123'"
                                 class="text-xs py-2 px-3 rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors text-left">
                             <span class="block font-semibold" style="color:#A07800;">Admin</span>
-                            <span class="text-gray-400">admin@keuangan.com</span>
+                            <span class="text-gray-400">admin@unionauthentic.com</span>
                         </button>
                         <button type="button"
-                                onclick="document.getElementById('email').value='petugas@keuangan.com';document.getElementById('password').value='Petugas@123'"
+                                onclick="document.getElementById('email').value='petugas@unionauthentic.com';document.getElementById('password').value='Petugas@123'"
                                 class="text-xs py-2 px-3 rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors text-left">
                             <span class="block font-semibold text-gray-700">Petugas</span>
-                            <span class="text-gray-400">petugas@keuangan.com</span>
+                            <span class="text-gray-400">petugas@unionauthentic.com</span>
                         </button>
                     </div>
                 </div>
@@ -215,5 +219,8 @@
         </div>
     </div>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

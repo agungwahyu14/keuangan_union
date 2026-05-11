@@ -45,7 +45,7 @@ class RolesAndPermissionsSeeder extends Seeder
         ]);
 
         $this->command->info('');
-        $this->command->info('✅ Roles & Permissions berhasil dikonfigurasi.');
+        $this->command->info('Roles & Permissions berhasil dikonfigurasi.');
         $this->command->table(
             ['Role', 'Permissions'],
             [
