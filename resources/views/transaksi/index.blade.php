@@ -101,6 +101,7 @@
                 <thead class="bg-gray-50 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     <tr>
                         <th class="px-4 py-3 text-left">Tanggal</th>
+                        <th class="px-4 py-3 text-left">Kode</th>
                         <th class="px-4 py-3 text-left">Keterangan</th>
                         <th class="px-4 py-3 text-left">Kategori</th>
                         <th class="px-4 py-3 text-left">Tipe</th>
@@ -115,6 +116,7 @@
                     @forelse($transactions as $trx)
                     <tr class="hover:bg-gray-50/60 transition-colors">
                         <td class="px-4 py-3 text-gray-600 whitespace-nowrap">{{ $trx->transaction_date->format('d/m/Y') }}</td>
+                        <td class="px-4 py-3 text-gray-800 whitespace-nowrap font-mono text-xs font-semibold">{{ $trx->transaction_code }}</td>
                         <td class="px-4 py-3 text-gray-800">
                             <div class="max-w-xs truncate">{{ $trx->description }}</div>
                             @if($trx->reference_number)
@@ -170,7 +172,7 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="7" class="px-4 py-16 text-center text-gray-400">
+                        <td colspan="8" class="px-4 py-16 text-center text-gray-400">
                             <svg class="w-10 h-10 mx-auto mb-2 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
                             Tidak ada transaksi ditemukan
                         </td>

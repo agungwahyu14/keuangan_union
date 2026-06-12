@@ -53,7 +53,8 @@ class TransactionController extends Controller
             $keyword = $request->search;
             $query->where(function ($q) use ($keyword) {
                 $q->where('description', 'like', "%{$keyword}%")
-                  ->orWhere('reference_number', 'like', "%{$keyword}%");
+                  ->orWhere('reference_number', 'like', "%{$keyword}%")
+                  ->orWhere('transaction_code', 'like', "%{$keyword}%");
             });
         }
 
@@ -77,7 +78,8 @@ class TransactionController extends Controller
             $kw = $request->search;
             $summaryBase->where(function ($q) use ($kw) {
                 $q->where('description', 'like', "%{$kw}%")
-                  ->orWhere('reference_number', 'like', "%{$kw}%");
+                  ->orWhere('reference_number', 'like', "%{$kw}%")
+                  ->orWhere('transaction_code', 'like', "%{$kw}%");
             });
         }
         $totalPemasukan   = (clone $summaryBase)->where('type', 'pemasukan')->sum('amount');

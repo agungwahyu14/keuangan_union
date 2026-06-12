@@ -12,6 +12,7 @@ class Transaction extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'transaction_code',
         'user_id',
         'category_id',
         'type',
@@ -22,6 +23,27 @@ class Transaction extends Model
         'note',
         'created_by',
     ];
+
+    protected static function booted()
+    {
+        static::creating(function ($transaction) {
+            if (empty($transaction->transaction_code)) {
+                $prefix = $transaction->type === 'pemasukan' ? 'TRX-IN' : 'TRX-OUT';
+                $date = $transaction->transaction_date ? \Carbon\Carbon::parse($transaction->transaction_date)->format('Ymd') : now()->format('Ymd');
+                
+                $lastTransaction = self::where('transaction_code', 'like', "{$prefix}-{$date}-%")
+                                       ->orderBy('id', 'desc')
+                                       ->first();
+                                       
+                $sequence = 1;
+                if ($lastTransaction && preg_match('/-(\d{4})$/', $lastTransaction->transaction_code, $matches)) {
+                    $sequence = intval($matches[1]) + 1;
+                }
+                
+                $transaction->transaction_code = sprintf("%s-%s-%04d", $prefix, $date, $sequence);
+            }
+        });
+    }
 
     protected $casts = [
         'amount'           => 'decimal:2',
