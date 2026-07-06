@@ -18,6 +18,8 @@
     <form method="POST" action="{{ route('pengguna.store') }}" class="p-6 space-y-5"
           x-data="{ showPass: false, showConfirm: false }">
         @csrf
+        {{-- Role field (hidden, selalu petugas) --}}
+        <input type="hidden" name="role" value="petugas">
 
         {{-- Nama --}}
         <div>
@@ -68,6 +70,7 @@
                 </button>
             </div>
             @error('password')<p class="mt-1 text-xs text-red-500">{{ $message }}</p>@enderror
+            <p class="mt-1 text-xs text-gray-400">Min. 8 karakter, harus mengandung huruf besar, huruf kecil, dan angka.</p>
         </div>
 
         {{-- Konfirmasi Password --}}
