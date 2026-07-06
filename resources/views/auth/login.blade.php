@@ -194,7 +194,7 @@
                 </form>
 
                 {{-- Info akun demo --}}
-                <div class="mt-6 pt-5 border-t border-gray-100">
+                <!-- <div class="mt-6 pt-5 border-t border-gray-100">
                     <p class="text-xs text-center text-gray-400 mb-3 font-medium uppercase tracking-wider">Akun Demo</p>
                     <div class="grid grid-cols-2 gap-2">
                         <button type="button"
@@ -210,7 +210,7 @@
                             <span class="text-gray-400">petugas@unionauthentic.com</span>
                         </button>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <p class="text-center text-xs text-gray-400 mt-6">
