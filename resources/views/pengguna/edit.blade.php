@@ -44,7 +44,7 @@
 
         {{-- Telepon --}}
         <div>
-            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1.5">No. Telepon <span class="text-gray-400 font-normal">(opsional)</span></label>
+            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1.5">No. WhatsApp <span class="text-gray-400 font-normal">(opsional)</span></label>
             <input type="text" name="phone" id="phone"
                    value="{{ old('phone', $pengguna->phone) }}"
                    maxlength="20" class="form-input">

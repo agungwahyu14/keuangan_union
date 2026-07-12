@@ -95,7 +95,7 @@ class UserManagementRequest extends FormRequest
         return [
             'name'     => 'nama lengkap',
             'email'    => 'email',
-            'phone'    => 'no. telepon',
+            'phone'    => 'no. WhatsApp',
             'role'     => 'role',
             'password' => 'password',
         ];

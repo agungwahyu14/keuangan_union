@@ -41,7 +41,7 @@
                 <tr>
                     <th class="w-10">#</th>
                     <th>Nama & Email</th>
-                    <th>No. Telepon</th>
+                    <th>No. WhatsApp</th>
                     <th class="text-center">Peran</th>
                     <th class="text-center">Jml Transaksi</th>
                     <th class="text-center">Status</th>
@@ -69,7 +69,15 @@
                             </div>
                         </div>
                     </td>
-                    <td class="text-gray-500 text-xs">{{ $user->phone ?: '—' }}</td>
+                    <td class="text-gray-500 text-xs">
+                        @if($user->phone)
+                            <a href="{{ $user->whatsapp_url }}" target="_blank" class="text-blue-600 hover:underline">
+                                {{ $user->phone }}
+                            </a>
+                        @else
+                            —
+                        @endif
+                    </td>
                     <td class="text-center">
                         @if($user->hasRole('admin'))
                         <span class="badge-admin"><i data-lucide="shield-check" class="w-3 h-3 inline-block mr-1"></i> Admin</span>

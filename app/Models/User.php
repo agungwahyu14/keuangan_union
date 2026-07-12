@@ -117,4 +117,20 @@ class User extends Authenticatable
     {
         return $this->role === 'admin' ? 'Administrator' : 'Petugas';
     }
+
+    /**
+     * URL WhatsApp untuk chat langsung
+     */
+    public function getWhatsappUrlAttribute(): ?string
+    {
+        if (!$this->phone) {
+            return null;
+        }
+        $phone = preg_replace('/[^0-9]/', '', $this->phone);
+        if (strpos($phone, '0') === 0) {
+            $phone = '62' . substr($phone, 1);
+        }
+        return "https://wa.me/" . $phone;
+    }
 }
+

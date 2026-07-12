@@ -46,7 +46,7 @@
         {{-- Telepon --}}
         <div>
             <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1.5">
-                No. Telepon <span class="text-gray-400 font-normal">(opsional)</span>
+                No. WhatsApp <span class="text-gray-400 font-normal">(opsional)</span>
             </label>
             <input type="text" name="phone" id="phone" value="{{ old('phone') }}"
                    placeholder="08xxxxxxxxxx" maxlength="20"
